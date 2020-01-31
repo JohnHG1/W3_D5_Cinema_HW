@@ -2,6 +2,8 @@ DROP TABLE tickets;
 DROP TABLE films;
 DROP TABLE customers;
 
+-- customers are last on this list above as it is the ticket and film that binds these together.
+
 CREATE TABLE customers(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),

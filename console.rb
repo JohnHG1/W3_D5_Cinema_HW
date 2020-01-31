@@ -10,7 +10,7 @@ require('pry-byebug')
 
 
   film1 = Film.new({
-    'title' => 'Godfather',
+    'title' => 'Jaws',
     'price' => 11 })
 
   film1.save()
