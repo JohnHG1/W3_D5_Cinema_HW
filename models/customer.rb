@@ -24,23 +24,24 @@ class Customer
     SqlRunner.run(sql, values)
   end
 
-  def films()
-      sql = "SELECT * FROM film
-      WHERE id = $1"
-      values = [@film_id]
-      film = SqlRunner.run(sql,values )
-      result = Film.new(film.first )
-      return result
-    end
+  # def film()
+  #   sql = "SELECT * FROM film
+  #   WHERE id = $1"
+  #   values = [@film_id]
+  #   film = SqlRunner.run(sql,values)
+  #   result = Film.new(film.first)
+  #   return result
+  # end
 
-  def tickets()
-      sql = "SELECT * FROM ticket
-      WHERE id = $1"
-      values = [@ticket_id]
-      ticket = SqlRunner.run(sql,values )
-      result = Ticket.new( ticket.first )
-      return result
-    end
+  def films()
+    sql = "SELECT films.* FROM films
+    INNER JOIN tickets
+    ON tickets.films_id = films.id
+    WHERE customer_id = $1"
+    values = [@id]
+    films = SqlRunner.run(sql, values)
+    return Films.map_items(films)
+  end
 
   def delete()
     sql = "DELETE from customers where id = $1"
@@ -49,8 +50,8 @@ class Customer
   end
 
 
-  def self.map_items(data)
-    result = data.map{|customer| Customer.new(customer)}
+  def self.map_items(customer_data)
+    result = customer_data.map{|customer| Customer.new(customer)}
     return result
   end
 
