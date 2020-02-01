@@ -24,6 +24,23 @@ class Film
     SqlRunner.run(sql, values)
   end
 
+  def customer()
+      sql = "SELECT * FROM customer
+      WHERE id = $1"
+      values = [@customer_id]
+      customer = SqlRunner.run( sql,values )
+      result = Customer.new( customer.first )
+      return result
+    end
+
+    def ticket()
+        sql = "SELECT * FROM ticket
+        WHERE id = $1"
+        values = [@ticket_id]
+        ticket = SqlRunner.run( sql,values )
+        result = Ticket.new( ticket.first )
+        return result
+      end
 
   def delete()
     sql = "DELETE FROM films where id = $1"
