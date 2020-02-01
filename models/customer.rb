@@ -24,20 +24,20 @@ class Customer
     SqlRunner.run(sql, values)
   end
 
-  def film()
+  def films()
       sql = "SELECT * FROM film
       WHERE id = $1"
       values = [@film_id]
-      film = SqlRunner.run( sql,values )
+      film = SqlRunner.run(sql,values )
       result = Film.new(film.first )
       return result
     end
 
-  def ticket()
+  def tickets()
       sql = "SELECT * FROM ticket
       WHERE id = $1"
       values = [@ticket_id]
-      ticket = SqlRunner.run( sql,values )
+      ticket = SqlRunner.run(sql,values )
       result = Ticket.new( ticket.first )
       return result
     end

@@ -1,6 +1,6 @@
-DROP TABLE tickets;
-DROP TABLE films;
-DROP TABLE customers;
+DROP TABLE IF EXISTS tickets;
+DROP TABLE IF EXISTS films;
+DROP TABLE IF EXISTS customers;
 
 -- customers are last on this list above as it is the ticket and film that binds these together.
 

@@ -24,7 +24,7 @@ class Film
     SqlRunner.run(sql, values)
   end
 
-  def customer()
+  def customers()
       sql = "SELECT * FROM customer
       WHERE id = $1"
       values = [@customer_id]
@@ -33,7 +33,7 @@ class Film
       return result
     end
 
-    def ticket()
+    def tickets()
         sql = "SELECT * FROM ticket
         WHERE id = $1"
         values = [@ticket_id]
