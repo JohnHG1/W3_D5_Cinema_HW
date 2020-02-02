@@ -28,7 +28,7 @@ class Film
   #   WHERE id = $1"
   #   values = [@customer_id]
   #   customer = SqlRunner.run( sql,values )
-  #   result = Customer.new( customer.first )
+  #   result = Customer.new(customer.first)
   #   return result
   # end
 
