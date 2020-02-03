@@ -33,15 +33,17 @@ class Customer
   #   return result
   # end
 
+
   def films()
     sql = "SELECT films.* FROM films
     INNER JOIN tickets
-    ON tickets.films_id = films.id
+    ON tickets.film_id = film.id
     WHERE customer_id = $1"
     values = [@id]
-    films = SqlRunner.run(sql, values)
-    return Films.map_items(films)
+    filmss = SqlRunner.run(sql, values)
+    return Film.map_items(film)
   end
+
 
   def delete()
     sql = "DELETE from customers where id = $1"

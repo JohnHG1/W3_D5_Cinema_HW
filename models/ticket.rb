@@ -28,7 +28,7 @@ class Ticket
     sql = "SELECT * FROM film
     WHERE id = $1"
     values = [@film_id]
-    film = SqlRunner.run( sql,values )
+    film = SqlRunner.run( sql, values )
     result = Film.new( film.first )
     return result
   end
