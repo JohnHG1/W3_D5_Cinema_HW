@@ -24,7 +24,7 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
-  def films()!!
+  def films()
     sql = "SELECT * FROM film
     WHERE id = $1"
     values = [@film_id]

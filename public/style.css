@@ -1,0 +1,28 @@
+header {
+  color: blue;
+
+}
+
+h1 {
+  position: absolute center;
+  top: 0;
+  width: 1400px;
+  margin: 20 auto;
+  background: lightblue;
+  padding: 20px;
+}
+
+h1 {
+  color: blue;
+  font-size: 5.2em;
+}
+
+h3 {
+  color: blue;
+  font-size: 2.2em;
+
+}
+
+body {
+  background-color: lightcyan
+}

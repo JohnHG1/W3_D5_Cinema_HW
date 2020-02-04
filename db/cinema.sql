@@ -23,4 +23,4 @@ CREATE TABLE tickets(
 );
 
 
--- I need two tabs in Terminal one for PSQL db name in this case cinema (psql cinema) and then you can call functions an dget tables (select * from tickets;) and you need the PRY open as well which is (psql -d cinema -f db/cinema.sql) and then (ruby console.rb)
+-- I need two tabs in Terminal one for PSQL db name in this case cinema (psql cinema) and then you can call functions and get tables (select * from tickets;) and you need the PRY open as well which is (psql -d cinema -f db/cinema.sql) and then (ruby console.rb)
